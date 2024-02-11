@@ -1,0 +1,55 @@
+.header {
+    background-image: url("./../../assets/hero.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 2.5rem 2.5rem 9rem 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: whit;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--fs-40);
+    position: relative;
+    z-index: 2;
+
+    font-family: var(--ff-main);
+    width: 63.5625rem;
+    color: white;
+
+    &_title {
+        font-size: var(--fs-56);
+        font-weight: var(--fw-bold);
+        text-transform: uppercase;
+        line-height: var(--fs-68);
+        font-family: var(--ff-header);
+    }
+
+    &_description {
+        width: 46.9375rem;
+        font-size: var(--fs-20);
+        font-weight: var(--fw-regular);
+        line-height: var(--fs-24);
+    }
+}
+
+.shadow {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(40, 40, 40, 0) 26%, rgba(40, 40, 40, 0.92) 70%, #282828 90%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}

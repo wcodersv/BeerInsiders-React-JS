@@ -1,0 +1,11 @@
+.container {
+    padding: 7.5rem 2.5rem 19.6875rem 2.5rem;
+
+    &_background {
+        padding: 5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+}

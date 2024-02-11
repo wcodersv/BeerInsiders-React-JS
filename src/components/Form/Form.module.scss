@@ -1,0 +1,77 @@
+@mixin flexStyles($property) {
+    display: flex;
+    flex-direction: column;
+    gap: $property;
+}
+
+@mixin baseStylesForText($fs, $fw, $lh) {
+    font-size: var($fs);
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+.container {
+    @include flexStyles(2.5rem);
+    width: 31.25rem;
+
+    // Container Header
+    &_header {
+        @include flexStyles(1.5rem);
+
+        &_title {
+            @include baseStylesForText(--fs-40, 600, 3rem);
+            text-align: center;
+            color: #000;
+        }
+
+        &_description {
+            @include baseStylesForText(--fs-20, 400, 1.5rem);
+            width: 31.25rem;
+        }
+    }
+}
+
+//Form
+.form {
+    @include flexStyles(1.5rem);
+    width: 31.25rem;
+
+
+    &_header {
+        @include baseStylesForText(--fs-20, 600, 1.5rem);
+
+        &_box{
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            height: 2.5rem;
+        }
+    }
+
+    &_row {
+        @include flexStyles(0.75rem);   
+        
+    }
+
+    &_title {
+        @include baseStylesForText(--fs-16, 400, 1.25rem);
+
+        &_bold {
+            font-weight: 600;
+        }
+    }
+
+    &_select {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    &_button {
+        margin-top: 1.25rem; 
+    }
+}

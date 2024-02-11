@@ -1,0 +1,60 @@
+.problems {
+    padding: 7.5rem 2.5rem 0 2.5rem;
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        gap: 3.75rem;
+        width: 85rem;
+        padding: 5rem 3.75rem;
+        
+
+        &_card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &_header {
+                display: flex;
+                flex-direction: row;
+                column-gap: 1.25rem;
+                align-items: center;
+
+                &_title {
+                    font-size: var(--fs-32);
+                    font-weight: 500;
+                    line-height: 2.375rem;
+                }
+
+                &_emoji {
+                    font-size: 60px;
+                    transform: rotate(11.29deg);
+                }
+
+                &_rotate {
+                    font-size: 60px;
+                    transform: rotate(-12.46deg);
+                }
+            }
+
+            &_main {
+                display: flex;
+                flex-direction: row;
+                column-gap: 1.5rem;
+
+                &_icon {
+                    width: 7.5rem;
+                    height: 7.5rem;
+                    
+                }
+
+                &_description {
+                    width: 45.8rem;
+                    font-size: var(--fs-20);
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+    }
+}

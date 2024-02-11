@@ -1,0 +1,79 @@
+.container {
+    padding: 9rem 2.5rem 0rem 2.5rem;
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        padding: 3.75rem 3.75rem 5rem 3.75rem;
+        margin: 0 auto;
+
+        &_description {
+            width: 64.375rem;
+            text-align: center;
+            font-size: var(--fs-24);
+            font-weight: 400;
+            line-height: 2rem;
+        }
+
+        &_cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        &_card {
+            width: 37.6875rem;
+            height: 14.25rem;
+            background-color: #875dd0;
+            color: #fff;
+            padding: 2.5rem;
+            box-shadow: 0px 4px 18px rgba(254.56, 254.56, 254.56, 0.24);
+            border-radius: 1.5rem;
+
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1rem;
+
+            &_information {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                &_title {
+                    font-size: var(--fs-24);
+                    font-weight: 600;
+                    line-height: 2rem;
+                }
+
+                &_description {
+                    font-size: var(--fs-20);
+                    font-weight: 400;
+                    line-height: 1.625rem;
+                }
+            }
+        }
+    }
+
+    &_circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 100%;
+        color: #875dd0;
+
+        &_number {
+            font-size: var(--fs-20);
+            font-weight: 400;
+            line-height: 1.625rem;
+        }
+    }
+}
