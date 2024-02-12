@@ -1,57 +1,23 @@
 // Form.jsx
 // Form содержит корпус переключателя с 3 другими компонентами. 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+
 import FormAboutCompany from './FormAboutCompany'
-import FormPersonalDetails from './FormPersonalDetails'
+import FormPersonalDetails from './FormPersonalDetails';
 import { FormSuccess } from './FormSuccess/FormSuccess';
 
+
 export const Form = () => {
+  const { handleSubmit, control, register, formState, reset } = useForm();
+  const { isSubmitSuccessful, errors } = formState;
+
   const [currentStep, setCurrentStep] = useState(1);
-  const [selectedValues, setSelectedValues] = useState({
-    formatCompany: [],
-    beer: [],
-    cider: [],
-    strongAlcohol: [],
-  });
 
-
-
-  const handleSelectChange = (category, selectedOptions) => {
-    const formData = JSON.parse(window.sessionStorage.getItem('formData')) || {};
-
-    setSelectedValues((prevSelectedValues) => ({
-      ...prevSelectedValues,
-      [category]: selectedOptions,
-    }));
-
-    const updatedFormData = {
-      ...formData,
-      [category]: selectedOptions,
-    };
-
-    window.sessionStorage.setItem('formData', JSON.stringify(updatedFormData));
-  };
-
-  const handleInput = (name, value) => {
-    const formData = JSON.parse(window.sessionStorage.getItem('formData')) || {};
-
-    const updatedFormData = {
-      ...formData,
-      [name]: value,
-    };
-
-    window.sessionStorage.setItem('formData', JSON.stringify(updatedFormData));
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    const formData = JSON.parse(window.sessionStorage.getItem('formData'));
-    console.log('Отправка данных на сервер:', formData);
-
+  const handleFormSubmit = (data) => {
+    console.log('Отправка данных на сервер:', data);
     setCurrentStep(currentStep + 1);
   };
-
 
   const handleNextStep = () => {
     setCurrentStep(currentStep + 1);
@@ -61,19 +27,34 @@ export const Form = () => {
     setCurrentStep(currentStep - 1);
   };
 
+  const onError = (errors) => {
+    console.log('Form errors', errors)
+  }
+
+  // const { watch } = useForm();
+  // const formData = watch();
+  // console.log('Form Data with react-hook-form:', formData);
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset])
+
   const renderFormStep = () => {
     switch (currentStep) {
       case 1:
         return <FormAboutCompany
           onNextStep={handleNextStep}
-          handleInput={handleInput}
-          selectedValues={selectedValues}
-          handleSelectChange={handleSelectChange}
+          register={register}
+          control={control}
         />;
       case 2:
         return <FormPersonalDetails
           onBackStep={handleBackStep}
-          handleInput={handleInput}
+          control={control}
+          register={register}
+          errors={errors}
         />;
       case 3:
         return <FormSuccess />;
@@ -83,7 +64,7 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} action="" method="get">
+    <form onSubmit={handleSubmit(handleFormSubmit, onError)} action="" method="get">
       {renderFormStep()}
     </form>
   )

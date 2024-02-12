@@ -40,7 +40,7 @@
     &_header {
         @include baseStylesForText(--fs-20, 600, 1.5rem);
 
-        &_box{
+        &_box {
             display: inline-flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -52,8 +52,8 @@
     }
 
     &_row {
-        @include flexStyles(0.75rem);   
-        
+        @include flexStyles(0.75rem);
+
     }
 
     &_title {
@@ -72,6 +72,49 @@
     }
 
     &_button {
-        margin-top: 1.25rem; 
+        margin-top: 1.25rem;
+    }
+}
+
+
+.error {
+    @include baseStylesForText(--fs-16, 400, 1.25rem);
+    color: red;
+}
+
+// Кастомное поле номера телефона
+.phoneinput {
+    &_container {
+        align-self: flex-end !important;
+        font-family: var(--ff-main) !important;
+
+        width: 100% !important;
+        height: 2.625rem !important;
+        align-self: stretch !important;
+        padding: 0.625rem 1rem !important;
+        background: #fff !important;
+        border-radius: 0.5rem !important;
+        ;
+        justify-content: flex-start !important;
+    }
+
+    &_input {
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+
+        font-family: var(--ff-main) !important;
+        font-size: var(--fs-16) !important;
+        font-weight: 400 !important;
+        line-height: 1.25rem !important;
+
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+    &_country {
+        display: none !important;
     }
 }

@@ -1,30 +1,51 @@
-import React, { useState } from 'react';
+// Input.jsx
+import React from 'react';
 import styles from './Input.module.scss';
 
-export const Input = ({ idLabel, handleInput, inputType = 'text' }) => {
-    const [inputValue, setInputValue] = useState('');
 
-    const handleChange = (e) => {
+export const Input = ({
+    name,
+    idLabel,
+    register,
+    required,
+    maxLengthInput,
+    inputType = 'text',
+    numericOnly = false,
+}) => {
+    const handleInputChange = (e) => {
+        if (numericOnly) {
+            const numericValue = e.target.value.replace(/\D/g, '');
+            const stringValue = String(numericValue)
 
-        let value = e.target.value.trimStart().replace(/\s\s+/g, ' ');
-        value = value.replace(/\.\s*$/, '');
+            if (stringValue.length > maxLengthInput) {
+                const limitedValue = stringValue.slice(0, maxLengthInput);
+                e.target.value = limitedValue;
+            } else {
+                e.target.value = numericValue;
+            }
 
-        setInputValue(value)
-
-        handleInput(idLabel, value);
-    }
+        } else {
+            let trimmedValue = e.target.value.trimStart().replace(/\s\s+/g, ' ');
+            e.target.value = trimmedValue;
+        }
+    };
 
     return (
         <div className={styles.container}>
             <input
+                name={name}
+                defaultValue={''}
                 type={inputType}
                 id={idLabel}
-                value={inputValue}
-                onChange={handleChange}
-                required
 
-
+                {...register(name, {
+                    required: required,
+                    maxLength: maxLengthInput,
+                    setValueAs: (value) => value.trim() || undefined,
+                })}
+                onChange={handleInputChange}
             />
         </div>
-    )
+    );
 }
+

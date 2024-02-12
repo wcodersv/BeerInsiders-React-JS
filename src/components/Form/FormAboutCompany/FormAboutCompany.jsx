@@ -1,5 +1,5 @@
 // FormAboutCompany.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../Form.module.scss';
 import Input from '../../Input';
 import ButtonSelect from '../../ButtonSelect';
@@ -9,9 +9,15 @@ import * as companyInformation from '../../../data/dataForm';
 import SelectOptions from '../../SelectOptions';
 
 
-export const FormAboutCompany = ({ onNextStep, handleInput, selectedValues, handleSelectChange, }) => {
+export const FormAboutCompany = ({ onNextStep, control, register }) => {
+    const [isMaxSelected, setIsMaxSelected] = useState(false);
 
-
+    const handleMaxLimitReached = () => {
+        setIsMaxSelected(true);
+        setTimeout(() => {
+            setIsMaxSelected(false);
+        }, 1000);
+    };
 
     return (
         <div className={styles.container}>
@@ -25,42 +31,49 @@ export const FormAboutCompany = ({ onNextStep, handleInput, selectedValues, hand
             <div className={styles.form}>
                 <h3 className={styles.form_header}>Шаг 1</h3>
 
+                {/* Сложность с обновлением */}
                 <div className={styles.form_row}>
                     <p className={styles.form_title}>Основная сложность с обновлением</p>
                     <div>
                         <SelectOptions
-                            handleInput={handleInput}
+                            name="problems"
+                            control={control}
+
                         />
                     </div>
-
                 </div>
 
+                {/* Формат заведения */}
                 <div className={styles.form_row}>
                     <p className={styles.form_title}>Формат заведения</p>
                     <div className={styles.form_select}>
                         {companyInformation.institutionFormatData.map(data => (
                             <ButtonSelect
+                                control={control}
+                                name="formatCompany"
                                 content={data.name}
                                 key={data.id}
-                                selectedValues={selectedValues.formatCompany}
-                                onSelect={(selected) => handleSelectChange('formatCompany', selected)}
+                                contentId={data.id}
                             />
                         ))}
                     </div>
                 </div>
 
+                {/* Средний чек */}
                 <div className={styles.form_row}>
                     <label className={styles.form_title} htmlFor="check">Средний чек ₽</label>
                     <Input
-                        idLabel="check"
-                        handleInput={handleInput}
-                        inputType='number'
-                        
+                        register={register}
+                        name="averageCheck"
+
+                        idLabel='averageCheck'
+                        inputType="number"
+
                     />
                 </div>
+                <ButtonInformation isMaxSelected={isMaxSelected} />
 
-                <ButtonInformation />
-
+                {/* Информация о напитках */}
                 {companyInformation.drinks.map(data => (
                     <div className={styles.form_row} key={data.idDrink}>
                         <p className={styles.form_title_bold}>{data.title}</p>
@@ -68,10 +81,12 @@ export const FormAboutCompany = ({ onNextStep, handleInput, selectedValues, hand
                             {
                                 data.typeDrinks.map(drink => (
                                     <ButtonSelect
+                                        control={control}
+                                        name={data.idDrink}
                                         content={drink.name}
                                         key={drink.id}
-                                        selectedValues={selectedValues[data.idDrink]}
-                                        onSelect={(selected) => handleSelectChange(data.idDrink, selected)}
+                                        contentId={drink.id}
+                                        handleMaxLimitReached={handleMaxLimitReached}
                                     />
                                 ))
                             }
@@ -81,6 +96,7 @@ export const FormAboutCompany = ({ onNextStep, handleInput, selectedValues, hand
 
                 <div className={styles.form_button}>
                     <ButtonAction
+                        typeButton='button'
                         content='Продолжить'
                         onClick={onNextStep}
                     />

@@ -1,50 +1,54 @@
+
 import React, { useState } from 'react';
+import { Controller } from 'react-hook-form';
 import styles from './SelectOptions.module.scss';
 import { problems } from '../../data/dataForm';
 
-export const SelectOptions = ({ handleInput }) => {
+export const SelectOptions = ({ control, name }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedValue, setSelectedValue] = useState({ value: '', label: '' });
 
     const handleToggleDropdown = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleOptionClick = (value, label) => {
+    const handleOptionClick = (value, label, field) => {
         const updatedValue = { value, label };
-
-        setSelectedValue(updatedValue);
-        handleInput('problems', updatedValue.label);
+        field.onChange(updatedValue);
         setIsOpen(false);
     };
 
     return (
-        <div className={styles.container}>
-            <div
-                className={styles.select_toggle}
-                onClick={handleToggleDropdown}
-            >
-                <p>{selectedValue.label || ''}</p>
+        <Controller
+            name={name}
+            defaultValue=""
+            control={control}
+            render={({ field }) => (
+                <div className={styles.container}>
+                    <div className={styles.select_toggle} onClick={handleToggleDropdown}>
+                        <p>{field.value.label || ''}</p>
+                        {isOpen ? (
+                            <div className={styles.select_arrow_active}></div>
+                        ) : (
+                            <div className={styles.select_arrow}></div>
+                        )}
+                    </div>
 
-                {isOpen ? <div className={styles.select_arrow_active}></div> : <div className={styles.select_arrow}></div>}
-
-            </div>
-
-            {isOpen && (
-                <div className={styles.select_options}>
-                    {problems.map((problem) => (
-                        <div
-                            key={problem.value}
-                            className={`${styles.select_option} 
-                            ${selectedValue.value === problem.value ? styles.select_selected : ''}`
-                            }
-                            onClick={() => handleOptionClick(problem.value, problem.label)}
-                        >
-                            <p>{problem.label}</p>
+                    {isOpen && (
+                        <div className={styles.select_options}>
+                            {problems.map((problem) => (
+                                <div
+                                    key={problem.value}
+                                    className={`${styles.select_option} ${field.value.value === problem.value ? styles.select_selected : ''}`}
+                                    onClick={() => handleOptionClick(problem.value, problem.label, field)}
+                                >
+                                    <p>{problem.label}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    )}
                 </div>
             )}
-        </div>
-    )
-}
+        />
+    );
+};
+
