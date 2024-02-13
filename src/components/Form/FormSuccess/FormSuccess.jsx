@@ -8,7 +8,6 @@ export const FormSuccess = () => {
       <h2 className={styles.container_title}>Спасибо за заявку!</h2>
       <p className={styles.container_description}>Менеджер позвонит вам в течение 24 часов 💜</p>
       <p className={styles.container_emoji}>🙂</p>
-
     </div>
   )
 }

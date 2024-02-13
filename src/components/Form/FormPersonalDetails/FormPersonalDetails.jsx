@@ -4,9 +4,9 @@ import { Controller } from 'react-hook-form';
 import PhoneInput from 'react-phone-input-2';
 
 import styles from '../Form.module.scss';
-import { ButtonActionCircle } from '../../ButtonActionCircle/ButtonActionCircle';
-import ButtonActionSubmit from '../../ButtonActionSubmit';
-import { InputController } from '../../InputController/InputController';
+import ButtonActionCircle from '../../Button/ButtonActionCircle';
+import { ButtonActionSubmit } from '../../Button/ButtonActionSubmit';
+import { InputController } from '../../Input/InputController';
 
 
 export const FormPersonalDetails = ({ onBackStep, control, register, errors }) => {

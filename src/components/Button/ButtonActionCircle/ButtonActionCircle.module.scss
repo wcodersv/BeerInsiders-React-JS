@@ -1,7 +1,7 @@
 .container {
     width: 2.5rem;
     height: 2.5rem;
-    background: white;
+    background: var(--clr-white);
     border-radius: 3rem;
 
     display: flex;
@@ -10,9 +10,10 @@
 
     &:hover {
         cursor: pointer;
+
         svg {
             path {
-                stroke: #8db952;
+                stroke: var(--clr-green-hover);
             }
         }
     }

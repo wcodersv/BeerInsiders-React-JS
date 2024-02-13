@@ -1,6 +1,6 @@
 // InputController.jsx
 import React from 'react';
-import styles from './InputController.module.scss';
+import styles from './Input.module.scss';
 import { Controller } from 'react-hook-form';
 
 export const InputController = ({

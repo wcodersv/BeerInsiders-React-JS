@@ -7,7 +7,6 @@ export const Header = () => {
         <>
             <header className={styles.header}>
                 <Logo />
-                {/* <p style={{fontSize: '50px'}}>Logo</p> */}
                 <div className={`${styles.hero}`}>
                     <h1 className={styles.hero_title}>Как обновить меню за 5 рабочих дней</h1>
                     <p className={styles.hero_description}>Владелец бара планирует закупки на сезон. Проверяет статистику продаж и спрашивает себя: как быстро выбрать напитки, которые будут продаваться?</p>

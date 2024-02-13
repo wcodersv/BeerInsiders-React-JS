@@ -1,18 +1,21 @@
-.problems {
+@mixin flex-container($gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+.container {
     padding: 7.5rem 2.5rem 0 2.5rem;
 
     &_content {
-        display: flex;
-        flex-direction: column;
-        gap: 3.75rem;
+        @include flex-container(3.75rem);
+
         width: 100%;
         max-width: 85rem;
         padding: 5rem 3.75rem;
 
         &_card {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            @include flex-container(1.5rem);
 
             &_header {
                 display: flex;
@@ -60,7 +63,7 @@
 }
 
 @media screen and (max-width: 650px) {
-    .problems {
+    .container {
         padding: 7.5rem 0 0 0;
 
         &_content {
@@ -108,15 +111,12 @@
     }
 }
 
-
 @media screen and (max-width: 550px) {
-
-    .problems {
+    .container {
         padding: 3.3rem 0 0 0;
 
         &_content {
             padding: 3.3rem 1.23rem;
-
         }
     }
 }

@@ -1,10 +1,10 @@
 // FormAboutCompany.jsx
 import React, { useState } from 'react';
 import styles from '../Form.module.scss';
-import Input from '../../Input';
-import ButtonSelect from '../../ButtonSelect';
-import ButtonInformation from '../../ButtonInformation';
-import ButtonAction from '../../ButtonAction';
+import { Input } from '../../Input/Input';
+import ButtonSelect from '../../Button/ButtonSelect';
+import ButtonInformation from '../../Button/ButtonInformation';
+import { ButtonAction } from '../../Button/ButtonAction';
 import * as companyInformation from '../../../data/dataForm';
 import SelectOptions from '../../SelectOptions';
 

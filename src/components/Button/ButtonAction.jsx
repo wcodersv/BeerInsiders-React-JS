@@ -1,17 +1,15 @@
 import React from 'react'
-import styles from './ButtonAction.module.scss';
+import styles from './Button.module.scss';
 
 export const ButtonAction = ({ content, onClick, typeButton = 'button' }) => {
 
     return (
         <button
             type={typeButton}
-            onClick={onClick}
             className={styles.container}
+            onClick={onClick}
         >
             {content}
         </button>
-
-
     )
 }

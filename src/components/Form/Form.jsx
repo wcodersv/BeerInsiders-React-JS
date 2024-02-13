@@ -7,7 +7,6 @@ import FormAboutCompany from './FormAboutCompany'
 import FormPersonalDetails from './FormPersonalDetails';
 import { FormSuccess } from './FormSuccess/FormSuccess';
 
-
 export const Form = () => {
   const { handleSubmit, control, register, formState, reset } = useForm();
   const { isSubmitSuccessful, errors } = formState;
@@ -31,6 +30,7 @@ export const Form = () => {
     console.log('Form errors', errors)
   }
 
+  //Для отладки
   // const { watch } = useForm();
   // const formData = watch();
   // console.log('Form Data with react-hook-form:', formData);

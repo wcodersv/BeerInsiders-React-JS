@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Controller } from 'react-hook-form';
 import styles from './SelectOptions.module.scss';
@@ -38,7 +37,9 @@ export const SelectOptions = ({ control, name }) => {
                             {problems.map((problem) => (
                                 <div
                                     key={problem.value}
-                                    className={`${styles.select_option} ${field.value.value === problem.value ? styles.select_selected : ''}`}
+                                    className={`${styles.select_option} 
+                                    ${field.value.value === problem.value ? styles.select_selected : ''}`}
+                                    
                                     onClick={() => handleOptionClick(problem.value, problem.label, field)}
                                 >
                                     <p>{problem.label}</p>

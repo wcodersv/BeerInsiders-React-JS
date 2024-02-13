@@ -10,7 +10,7 @@
     height: 2.625em;
     align-self: stretch;
     padding: 0.625em 1em;
-    background: #fff;
+    background: var(--clr-white);
     border-radius: 0.5em;
     justify-content: flex-start;
 
@@ -40,7 +40,7 @@
         width: 100%;
 
         border-radius: 0 0 0.5em 0.5em;
-        background-color: #fff;
+        background-color: var(--clr-white);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         padding-bottom: 0.5em;
     }
@@ -54,7 +54,7 @@
 
         &:hover {
             cursor: pointer;
-            background-color: #875dd0;
+            background-color: var(--clr-primary);
 
             p {
                 color: white;
@@ -64,22 +64,21 @@
 
     &_selected {
         padding: 0.625em 1em;
-        background-color: #875dd0;
+        background-color: var(--clr-primary);
 
         p {
             @include baseStylesForText;
-            color: white;
+            color: var(--clr-white);
         }
     }
 
-
     &_arrow {
-        background-image: url('../../assets/dropdown.svg');
+        background-image: url("../../assets/dropdown.svg");
         width: 1.5em;
         height: 1.5em;
 
         &_active {
-            background-image: url('../../assets/dropdown.svg');
+            background-image: url("../../assets/dropdown.svg");
             width: 1.5em;
             height: 1.5em;
             transform: rotate(180deg);

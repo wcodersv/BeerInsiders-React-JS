@@ -1,9 +1,7 @@
 import React from 'react'
-import styles from './ButtonActionSubmit.module.scss';
+import styles from './Button.module.scss';
 
 export const ButtonActionSubmit = ({ content }) => {
-
-
     return (
         <button
             type='submit'
@@ -11,7 +9,5 @@ export const ButtonActionSubmit = ({ content }) => {
         >
             {content}
         </button>
-
-
     )
 }

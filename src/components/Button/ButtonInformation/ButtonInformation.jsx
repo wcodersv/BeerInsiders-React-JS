@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './ButtonInformation.module.scss';
-import iconInformation from '../../assets/icon-information.svg'
+import iconInformation from '../../../assets/icon-information.svg';
 
-
-export const ButtonInformation = ({isMaxSelected}) => {
+export const ButtonInformation = ({ isMaxSelected }) => {
     const buttonClasses = `${styles.container} ${isMaxSelected ? styles.container_maxSelected : ''}`;
-
 
     return (
         <div className={buttonClasses}>

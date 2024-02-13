@@ -15,7 +15,7 @@
 
     &_title {
         @include baseStylesForText(2.5em, 600, 3em);
-        color: #000;
+        color: var(--clr-black);
     }
 
     &_description {
@@ -31,25 +31,19 @@
     }
 }
 
-
 @media screen and (max-width: 550px) {
     .container {
         &_title {
             @include baseStylesForText(2.5em, 600, 1.5em);
         }
-
     }
 }
 
-
 @media screen and (max-width: 460px) {
     .container {
-
         &_description {
             width: 20rem;
             @include baseStylesForText(1.25em, 400, 1.5em);
         }
-
-
     }
 }

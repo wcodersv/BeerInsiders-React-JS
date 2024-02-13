@@ -45,7 +45,7 @@
     }
 
     .gray_background {
-        background-color: #f8f8fa;
+        background-color: var(--clr-gray);
         border-radius: 0;
         margin: 0 auto;
     }
