@@ -12,8 +12,9 @@ export const Header = () => {
                     <p className={styles.hero_description}>Владелец бара планирует закупки на сезон. Проверяет статистику продаж и спрашивает себя: как быстро выбрать напитки, которые будут продаваться?</p>
                     <p className={styles.hero_description}>На обновление барной карты хочется тратить пару дней вместо недель. В Beer Insiders мы проанализировали рынок и вот что выяснили.</p>
                 </div>
+                <div className={styles.shadow}></div>
             </header>
-            <div className={styles.shadow}></div>
+
         </>
     )
 }
