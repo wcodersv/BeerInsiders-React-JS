@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styles from '../Form.module.scss';
 import { Input } from '../../Input/Input';
+import ButtonSelectWithLimit from '../../Button/ButtonSelectWithLimit';
 import ButtonSelect from '../../Button/ButtonSelect';
 import ButtonInformation from '../../Button/ButtonInformation';
 import { ButtonAction } from '../../Button/ButtonAction';
@@ -80,7 +81,7 @@ export const FormAboutCompany = ({ onNextStep, control, register }) => {
                         <div className={styles.form_select}>
                             {
                                 data.typeDrinks.map(drink => (
-                                    <ButtonSelect
+                                    <ButtonSelectWithLimit
                                         control={control}
                                         name={data.idDrink}
                                         content={drink.name}

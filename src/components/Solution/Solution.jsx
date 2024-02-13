@@ -6,6 +6,7 @@ export const Solution = () => {
     const data = [
         {
             number: 1,
+            idData: `1-data-solution`,
             header: `Отправим образцы на пробу`,
             text: `Заполните форму и укажите напитки, которые хотите попробовать. Менеджер по продажам
              Beer Insiders позвонит вам и отправит образцы в течение дня.`
@@ -13,6 +14,7 @@ export const Solution = () => {
 
         {
             number: 2,
+            idData: `2-data-solution`,
             header: `Проведем дегустацию с сомелье`,
             text: `Заполните форму и расскажите, в чем сейчас сложность с продажами. Мы организуем дегустацию
              с сомелье в вашем заведении. Выезжаем в пределах города с 10 до 20 ч.`
@@ -30,7 +32,7 @@ export const Solution = () => {
                 <div className={styles.container_content_cards}>
 
                     {data.map(card => (
-                        <div className={styles.container_content_card}>
+                        <div className={styles.container_content_card} key={card.idData}>
                             <div className={styles.container_circle}>
                                 <p className={styles.container_circle_number}>{card.number}</p>
                             </div>
