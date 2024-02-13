@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/BeerInsiders-React-JS/static/css/main.b82ed64e.css",
+    "main.js": "/BeerInsiders-React-JS/static/js/main.d96d316f.js",
+    "static/media/hero.png": "/BeerInsiders-React-JS/static/media/hero.a6f75a6f4c88e549e9fd.png",
+    "static/media/drukwidecyr-bold.svg": "/BeerInsiders-React-JS/static/media/drukwidecyr-bold.77441e39405e2b65b1a9.svg",
+    "static/media/drukwidecyr-bold.ttf": "/BeerInsiders-React-JS/static/media/drukwidecyr-bold.d49ab344f9f2b8b39eef.ttf",
+    "static/media/drukwidecyr-bold.woff2": "/BeerInsiders-React-JS/static/media/drukwidecyr-bold.d82f30090d01b42c8231.woff2",
+    "static/media/logo.svg": "/BeerInsiders-React-JS/static/media/logo.2b8bf6cc8031f40b351d1938234d1f95.svg",
+    "static/media/icon-sick.svg": "/BeerInsiders-React-JS/static/media/icon-sick.f5a774bacd15e802ba7e6f28ca350915.svg",
+    "static/media/icon-information.svg": "/BeerInsiders-React-JS/static/media/icon-information.f4f2b09da9cd6dd35441cf94667eac5c.svg",
+    "static/media/icon-calendar.svg": "/BeerInsiders-React-JS/static/media/icon-calendar.071173572238bf85c091000242f78752.svg",
+    "static/media/icon-clock.svg": "/BeerInsiders-React-JS/static/media/icon-clock.45c093d7ec2fa301528d01ce77258779.svg",
+    "index.html": "/BeerInsiders-React-JS/index.html",
+    "static/media/dropdown.svg": "/BeerInsiders-React-JS/static/media/dropdown.ab88023bb9c84bb8f1f6.svg",
+    "static/media/drukwidecyr-bold.eot": "/BeerInsiders-React-JS/static/media/drukwidecyr-bold.31d6cfe0d16ae931b73c.eot",
+    "static/media/drukwidecyr-bold.woff": "/BeerInsiders-React-JS/static/media/drukwidecyr-bold.31d6cfe0d16ae931b73c.woff",
+    "main.b82ed64e.css.map": "/BeerInsiders-React-JS/static/css/main.b82ed64e.css.map",
+    "main.d96d316f.js.map": "/BeerInsiders-React-JS/static/js/main.d96d316f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b82ed64e.css",
+    "static/js/main.d96d316f.js"
+  ]
+}
