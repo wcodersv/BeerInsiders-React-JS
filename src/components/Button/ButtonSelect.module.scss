@@ -14,11 +14,20 @@
 
     &:hover {
         background-color: var(--clr-primary);
-        color: var(--clr-white);;
+        color: var(--clr-white);
     }
 
     &_selected {
         background-color: var(--clr-primary);
         color: var(--clr-white);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        &:hover {
+            background-color: transparent;
+            color: var(--clr-primary);
+        }
     }
 }
