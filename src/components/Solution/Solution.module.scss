@@ -11,7 +11,8 @@
         margin: 0 auto;
 
         &_description {
-            width: 64.375rem;
+            width: 100%;
+            max-width: 64.375rem;
             text-align: center;
             font-size: var(--fs-24);
             font-weight: 400;
@@ -25,35 +26,33 @@
         }
 
         &_card {
-            width: 37.6875rem;
-            height: 14.25rem;
+            width: 100%;
+            max-width: 37.6875rem;
+            min-height: 14.25rem;
             background-color: #875dd0;
             color: #fff;
             padding: 2.5rem;
             box-shadow: 0px 4px 18px rgba(254.56, 254.56, 254.56, 0.24);
             border-radius: 1.5rem;
 
-            display: inline-flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: 2.5rem 1fr;
+            column-gap: 1rem;
+            row-gap: 0.5rem;
+            align-items: start;
 
-            &_information {
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
+            &_title {
+                font-size: var(--fs-24);
+                font-weight: 600;
+                line-height: 2rem;
+            }
 
-                &_title {
-                    font-size: var(--fs-24);
-                    font-weight: 600;
-                    line-height: 2rem;
-                }
+            &_description {
+                grid-column: 2;
 
-                &_description {
-                    font-size: var(--fs-20);
-                    font-weight: 400;
-                    line-height: 1.625rem;
-                }
+                font-size: var(--fs-20);
+                font-weight: 400;
+                line-height: 1.625rem;
             }
         }
     }
@@ -74,6 +73,63 @@
             font-size: var(--fs-20);
             font-weight: 400;
             line-height: 1.625rem;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        &_content {
+            &_cards {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            &_card {
+                max-width: 56rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        padding: 7.5rem 0 0 0;
+
+        &_content {
+            &_description {
+                text-align: start;
+            }
+
+            &_cards {
+                gap: 1rem;
+            }
+
+            &_card {
+                &_description {
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .container {
+
+        &_content {
+            padding: 2rem 1.3rem 3.3rem 1.3rem;
+            gap: 2rem;
+
+            &_cards {
+                gap: 1.3rem;
+            }
+
+            &_card{
+                padding: 1.3rem;
+                row-gap: 1rem;
+                min-height: max-content;
+            }
         }
     }
 }

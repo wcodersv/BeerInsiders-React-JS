@@ -1,32 +1,55 @@
 @mixin baseStylesForText($fs, $fw, $ln) {
-    font-size: var($fs);
+    font-size: $fs;
     font-weight: $fw;
     line-height: $ln;
 }
 
 .container {
-    width: 31.25rem;
+    width: 100%;
+    max-width: 31.25rem;
 
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     align-items: center;
     text-align: center;
 
     &_title {
-        @include baseStylesForText(--fs-40, 600, 3rem);
+        @include baseStylesForText(2.5em, 600, 3em);
         color: #000;
     }
 
     &_description {
         width: 31.25rem;
-        @include baseStylesForText(--fs-20, 400, 1.5rem);
+        @include baseStylesForText(1.25em, 400, 1.5em);
     }
 
     &_emoji {
         width: 6.1rem;
         height: 6.1rem;
-        font-size: 6rem;
-        margin-top: 1rem;
+        font-size: 6em;
+        margin-top: 2.5rem;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .container {
+        &_title {
+            @include baseStylesForText(2.5em, 600, 1.5em);
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    .container {
+
+        &_description {
+            width: 20rem;
+            @include baseStylesForText(1.25em, 400, 1.5em);
+        }
+
+
     }
 }

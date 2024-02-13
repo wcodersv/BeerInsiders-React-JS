@@ -1,5 +1,6 @@
 import React from 'react';
 import './global.scss';
+import './media.css'
 import { Header } from '../layout/Header/Header';
 import Problems from '../components/Problems';
 import Solution from '../components/Solution';

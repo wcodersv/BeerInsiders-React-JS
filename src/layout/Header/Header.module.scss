@@ -1,9 +1,9 @@
 .header {
-    background-image: url("./../../assets/hero.png");
+    background: url("./../../assets/hero.png") center/cover no-repeat;
     width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    height: 100dvh;
+    min-height: 50rem;
+
     position: relative;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: whit;
+    color: white;
 }
 
 .hero {
@@ -25,31 +25,58 @@
     z-index: 2;
 
     font-family: var(--ff-main);
-    width: 63.5625rem;
+    width: 100%;
+    max-width: 63.5625rem;
     color: white;
 
     &_title {
         font-size: var(--fs-56);
         font-weight: var(--fw-bold);
         text-transform: uppercase;
-        line-height: var(--fs-68);
+        line-height: 4.25rem;
         font-family: var(--ff-header);
     }
 
     &_description {
-        width: 46.9375rem;
+        width: 100%;
+        max-width: 46.9375rem;
         font-size: var(--fs-20);
         font-weight: var(--fw-regular);
-        line-height: var(--fs-24);
+        line-height: 1.5rem;
     }
 }
 
 .shadow {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background: linear-gradient(180deg, rgba(40, 40, 40, 0) 26%, rgba(40, 40, 40, 0.92) 70%, #282828 90%);
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
 }
+
+@media screen and (max-width: 650px) {
+    .header{
+        padding:3.75rem 3.75rem 9rem 3.75rem;
+    }
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .header{
+        padding:1.23rem 1.23rem 9rem 1.23rem;
+    }
+
+    .hero {
+        &_title {
+            font-size: var(--fs-40);
+            line-height: 3rem;
+
+        }
+    }
+}
+
+
+
